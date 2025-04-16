@@ -1,0 +1,131 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 0.5rem 1rem;
+  position: relative;
+  z-index: 100;
+  flex-wrap: wrap;
+
+  .brand {
+    .logo img {
+      width: 150px;
+      height: auto;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      a {
+        color: gold;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+
+        &:hover {
+          color:goldenrod
+        }
+      }
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      background: linear-gradient(135deg, #b08d57 0%, #ffd700 50%, #c5a947 100%);
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      z-index: 1100;
+
+      div {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        transition: all 0.3s;
+      }
+
+      div:nth-child(2) {
+        margin: 5px 0;
+      }
+
+      &.open {
+        div:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        div:nth-child(2) {
+          opacity: 0;
+        }
+
+        div:nth-child(3) {
+          transform: rotate(-45deg) translate(5px, -6px);
+        }
+      }
+    }
+  }
+
+  .header-call a {
+    font-size: 1.2rem;
+    color: white;
+
+    &:hover {
+      color: #ffd700;
+    }
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    nav {
+      width: 100%;
+      justify-content: space-between;
+
+      .hamburger {
+        display: flex;
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-end;
+        background-color: black;
+        padding: 1rem;
+        border-left: 2px solid #ffd700;
+        border-bottom: 2px solid #ffd700;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        display: none;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+
+        &.open {
+          display: flex;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}

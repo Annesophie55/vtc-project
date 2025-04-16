@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <title>{% block title %}VTC Réservation{% endblock %}</title>
 
-    {% block stylesheets %}{% endblock %}
-    {% block importmap %}{{ importmap('app') }}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="http://localhost:5173/src/style.scss" />
+{% endblock %}
+
+{% block javascripts %}
+    <script type="module" src="http://localhost:5173/src/main.js"></script>
+{% endblock %}
+
+
 </head>
 <body>
+    {% include 'partials/header.html.twig' %}
+
     {% block body %}{% endblock %}
+
+    {% include 'partials/footer.html.twig' %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    // Fermer le menu si on clique en dehors
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      }
+    });
+  });
+</script>
+
 </body>
 </html>

@@ -1,0 +1,26 @@
+:root {
+  /* Couleurs principales */
+  --black: #0E0E0E;
+  --black-soft: #1A1A1A;
+  --gold: #FFD700;
+  --gold-dark: #C7A400;
+  --white: #FFFFFF;
+
+  /* Couleurs neutres */
+  --gray-light: #DADADA;
+  --gray-medium: #999999;
+  --gray-dark: #444444;
+
+  /* Couleurs secondaires utiles */
+  --alert: #E63946; /* Rouge discret si besoin */
+  --success: #4CAF50; /* Pour validation (réservations) */
+
+  /* Couleurs avec opacité */
+  --black-opacity-10: rgba(0, 0, 0, 0.1);
+  --black-opacity-20: rgba(0, 0, 0, 0.2);
+
+  /* Polices */
+  --font-primary: 'Lato', sans-serif;
+  --font-secondary: 'Playfair Display', serif;
+  --font-accent: 'Dancing Script', cursive;
+}
